@@ -2,29 +2,15 @@ import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
-  Text,
-  StatusBar,
-  View,
   FlatList
 } from 'react-native';
-import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
+import { Item } from '../components/Card';
 
-import { dataSpace } from "../data";
+import { useStarships } from '../hooks/useStarship';
 
 
+const dataSpace = useStarships();
 
-const Item = ({ name, model, manufact, length, cost, img}) => (
- <Card style={styles.card}>
-    <Card.Content>
-      <Title>{name}</Title>
-      <Paragraph>{model}</Paragraph>
-      <Paragraph>{manufact}</Paragraph>
-      <Paragraph>{length}</Paragraph>
-      <Paragraph>{cost}</Paragraph>
-    </Card.Content>
-    <Card.Cover source={{ uri: img }} />
-  </Card>
-);
 
 const FeedScreen = () => {
   const renderItem = ({ item }) => (
@@ -41,7 +27,7 @@ const FeedScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        data={dataSpace.results}
+        data={dataSpace}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
