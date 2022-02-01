@@ -10,9 +10,7 @@ const queryClient = new QueryClient()
 
 function App() {
   return <QueryClientProvider client={queryClient}>
-    return <FeedScreen/>;
-  {/* <LoginScreen />;
-<TermsScreen/>; */}
+    <FeedScreen/>;
 </QueryClientProvider>
 }
 
