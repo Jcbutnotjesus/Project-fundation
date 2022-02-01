@@ -9,9 +9,9 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 const queryClient = new QueryClient()
 
 function App() {
-  return <QueryClientProvider client={queryClient}>
+  return (<QueryClientProvider client={queryClient}>
     <FeedScreen></FeedScreen>
-</QueryClientProvider>
+</QueryClientProvider>)
 }
 
 

@@ -34,7 +34,7 @@ const FeedScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        data={data}
+        data={data.results}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
