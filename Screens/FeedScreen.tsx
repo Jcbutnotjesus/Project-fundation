@@ -2,7 +2,8 @@ import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
-  FlatList
+  FlatList,
+  Text
 } from 'react-native';
 import { Item } from '../components/Card';
 import { useStarships } from '../hooks/useStarship';
@@ -11,12 +12,12 @@ import { useStarships } from '../hooks/useStarship';
 
 const FeedScreen = () => {
   const { isLoading, isError, data } = useStarships();
-  console.log(data)
+
   if (isLoading) {
-    return console.log("loading");
+    return <Text>Loading</Text>
   }
   if (isError) {
-    return alert("error");
+    return <Text>Error</Text>;
   }
   
   
