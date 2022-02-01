@@ -5,19 +5,20 @@ import {
   FlatList
 } from 'react-native';
 import { Item } from '../components/Card';
-import { QueryClient, QueryClientProvider } from 'react-query'
 import { useStarships } from '../hooks/useStarship';
 
 
 
 const FeedScreen = () => {
   const { isLoading, isError, data } = useStarships();
+  console.log(data)
   if (isLoading) {
     return console.log("loading");
   }
   if (isError) {
     return alert("error");
   }
+  
   
   const renderItem = ({ item }) => (
     <Item
@@ -33,7 +34,7 @@ const FeedScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        data={data.data}
+        data={data}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
