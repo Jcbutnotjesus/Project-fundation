@@ -27,7 +27,7 @@ const FeedScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        data={dataSpace}
+        data={dataSpace.data}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
