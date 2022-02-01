@@ -2,5 +2,5 @@
 
 npm i
 
-launch project 
+npm start
 
