@@ -7,5 +7,6 @@ async function fetchData() {
 }
 
 export function useStarships() {
+    
   return useQuery(["starships"], fetchData);
 }
