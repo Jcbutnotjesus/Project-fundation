@@ -10,7 +10,6 @@ import { useStarships } from '../hooks/useStarship';
 
 
 
-const queryClient = new QueryClient();
 const FeedScreen = () => {
   const { isLoading, isError, data } = useStarships();
   if (isLoading) {
@@ -32,7 +31,6 @@ const FeedScreen = () => {
   );
 
   return (
-
     <SafeAreaView style={styles.container}>
       <FlatList
         data={data.data}
